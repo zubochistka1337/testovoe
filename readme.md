@@ -74,7 +74,7 @@ uvicorn main:app --host localhost --port 5000
 ## Используемые ресурсы
 
 *   Распознавание объектов на YOLOv8.
-*   Веса взяты из готовые отсюда, за основу взята модель n (суперлегкая): [https://github.com/J3lly-Been/YOLOv8-HumanDetection](https://github.com/J3lly-Been/YOLOv8-HumanDetection)
+*   Веса взяты готовые отсюда, в основе модель скорее всего n (суперлегкая): [https://github.com/J3lly-Been/YOLOv8-HumanDetection](https://github.com/J3lly-Been/YOLOv8-HumanDetection)
 
 ## Тестирование
 
