@@ -13,3 +13,5 @@ services:
       - redis  # Зависимость от сервиса Redis
     environment:
       - REDIS_HOST=redis  #  Указываем имя хоста Redis для приложения
+    devices: # Добавляем устройство
+      - /dev/video0:/dev/video0
