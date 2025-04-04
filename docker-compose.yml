@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  redis:
+    image: "redis:latest"
+    ports:
+      - "6379:6379"  # Публикуем порт Redis
+
+  app:
+    build: .  # Используем Dockerfile из текущей директории
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis  # Зависимость от сервиса Redis
+    environment:
+      - REDIS_HOST=redis  #  Указываем имя хоста Redis для приложения

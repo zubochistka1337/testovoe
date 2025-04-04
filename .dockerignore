@@ -1,0 +1,11 @@
+.git
+__pycache__
+*.pyc
+*.pyo
+venv
+.venv
+.idea
+database.db
+settings.json
+img_humans
+.gitignore

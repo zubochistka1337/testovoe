@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Camera Feed</title>
+    <style>
+        img {
+            max-width: 300px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Camera Feed</h1>
+    <div id="images"></div>
+
+    <script>
+        const eventSource = new EventSource("/events");
+
+        eventSource.onmessage = function(event) {
+            const imageName = event.data;
+            const imagesDiv = document.getElementById("images");
+            const img = document.createElement("img");
+            img.src = '/img/' + imageName; // путь к картинке
+            imagesDiv.appendChild(img);
+        };
+
+        eventSource.onerror = function(error) {
+            console.error("SSE error:", error);
+            eventSource.close(); // закрыть соединение при ошибке
+        };
+    </script>
+</body>
+</html>
